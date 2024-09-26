@@ -1,0 +1,15 @@
+1. Installation of Docker : curl -sSL https://get.docker.com | sh
+2. Add user:  sudo usermod -aG docker user
+3. Reboot Pi: sudo reboot
+Made a App file in every Pi. 
+4. Move files from local system or nano write them : scp "C:/path/clients.py" "C:/path/object_tracking.proto" "C:/path/Dockerfile" "C:/path/requirements.txt" user@192.168.10.163:/home/user/App      
+5. Docker  build image: docker build --no-cache -t object-tracking-app .
+6.  Check docker images: docker images
+7. In case we want to delete a docker image: docker rmi <image_name_or_id>
+8. In case we need force deletion:  docker rmi -f <image_name_or_id>
+9. Start the container interactively: docker run -it object-tracking-app /bin/sh 
+10. Run the image: docker run object-app 
+11. Or run inside the Interactive with : python client.py or whatever .py we want 
+
+Everytime we need to edit or change sth in the code we need to remove the image and rebuild it :D 
+
