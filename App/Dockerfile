@@ -20,6 +20,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+# Generate gRPC files
+RUN python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. object_tracking.proto
+
 EXPOSE 8080
 
 CMD ["python", "./app.py"]
