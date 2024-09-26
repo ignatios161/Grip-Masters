@@ -25,4 +25,5 @@ RUN python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. object_tr
 
 EXPOSE 8080
 
-CMD ["python", "./app.py"]
+# change client.py depends what we are using
+CMD ["python", "./client.py"] 
