@@ -35,4 +35,4 @@ def run_client():
         stub.SendResultData(results)
 
 if __name__ == '__main__':
-    run()
+    run_client()
