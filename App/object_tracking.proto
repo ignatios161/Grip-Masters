@@ -7,7 +7,10 @@ service CameraService {
     rpc SendObjectPosition (ObjectPosition) returns (Response);
     rpc SendFrameData (FrameData) returns (Response);
 }
-
+// DatasetDistributor service
+service DatasetDistributor {
+    rpc SendDatasetFrame (Request) returns (FrameData);
+}
 // Compute nodes service
 service ComputeNodeService {
     rpc ProcessFrame (FrameData) returns (ProcessedData);
@@ -22,6 +25,15 @@ message ObjectPosition {
 // Image frame as bytes
 message FrameData {
     bytes frame = 1;  
+    string message = 2; 
+}
+
+message Request {
+    string message = 1;
+}
+
+message ResultData {
+    string message = 1; 
 }
 
 message ProcessedData {
