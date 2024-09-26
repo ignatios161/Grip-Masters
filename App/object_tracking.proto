@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package object_tracking;
+
+// Camera service for the Camera Pi 
+service CameraService {
+    rpc SendObjectPosition (ObjectPosition) returns (Response);
+    rpc SendFrameData (FrameData) returns (Response);
+}
+
+// Compute nodes service
+service ComputeNodeService {
+    rpc ProcessFrame (FrameData) returns (ProcessedData);
+}
+
+// Messages
+message ObjectPosition {
+    float x = 1;
+    float y = 2;
+}
+
+// Image frame as bytes
+message FrameData {
+    bytes frame = 1;  
+}
+
+message ProcessedData {
+    bytes processed_frame = 1;
+}
+
+message Response {
+    string message = 1;
+}
