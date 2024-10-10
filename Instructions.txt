@@ -10,6 +10,9 @@ Made a App file in every Pi.
 9. Start the container interactively: docker run -it object-tracking-app /bin/sh 
 10. Run the image: docker run object-app 
 11. Or run inside the Interactive with : python client.py or whatever .py we want 
+12. Expose port when you run the container for communication: docker run -d --name grpc-server -p 50051:50051 grpc-image-pc 
+
+
 
 Everytime we need to edit or change sth in the code we need to remove the image and rebuild it :D 
 
